@@ -7,9 +7,15 @@ export const Container = styled.View`
 
 export const Header = styled.Text`
   font-size: 50px;
-  padding: 100px 30px 30px 50px;
+  padding: 50px 30px 10px 40px;
   font-weight: bold;
   color: #fff;
+`;
+
+export const Logo = styled.Image`
+  width: 210px;
+  height: 140px;
+  margin: 0 0 10px 100px;
 `;
 
 export const ButtonBox = styled.View`

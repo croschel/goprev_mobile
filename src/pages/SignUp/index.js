@@ -10,6 +10,7 @@ import {
   Container,
   Header,
   FormBox,
+  GroupTitle,
   Title,
   GroupInput,
   Label,
@@ -40,10 +41,13 @@ function SignUp({ navigation }) {
     <Background>
       <Container>
         <StatusBar barStyle="light-content" backgroundColor="#7B2BE8" />
-        <Header source={goprev} />
-        <BackButton onPress={() => navigation.navigate('Principal')}>
-          <Icon name="arrow-back" size={40} color="#fff" />
-        </BackButton>
+        <GroupTitle>
+          <BackButton onPress={() => navigation.navigate('Principal')}>
+            <Icon name="arrow-back" size={40} color="#fff" />
+          </BackButton>
+          <Header source={goprev} />
+        </GroupTitle>
+
         <FormBox style={{ elevation: 5 }}>
           <Title>Cadastrar</Title>
           <GroupInput>

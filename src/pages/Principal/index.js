@@ -1,11 +1,14 @@
 import React from 'react';
 import { Text, StatusBar } from 'react-native';
 
+import goprev from '~/assets/goprev.png';
+
 import Background from '~/components/Background';
 
 import {
   Container,
   Header,
+  Logo,
   LoginButton,
   SignUpButton,
   ButtonBox,
@@ -18,7 +21,8 @@ function Principal({ navigation }) {
     <Background>
       <Container>
         <StatusBar barStyle="light-content" backgroundColor="#7B2BE8" />
-        <Header>Oi, Bem Vindo ao GoPrev</Header>
+        <Header>Seja bem vindo ao</Header>
+        <Logo source={goprev} />
         <ButtonBox>
           <LoginButton>
             <TextLogin onPress={() => navigation.navigate('SignIn')}>

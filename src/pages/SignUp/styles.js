@@ -6,10 +6,13 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.Image`
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  top: -70px;
+  width: 210px;
+  height: 140px;
+  margin: 10px auto;
+`;
+
+export const GroupTitle = styled.View`
+  flex-direction: row;
 `;
 
 export const Title = styled.Text`
