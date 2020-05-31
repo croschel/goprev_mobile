@@ -5,7 +5,7 @@ import { withNavigationFocus } from 'react-navigation';
 
 // import { Container } from './styles';
 
-function Dashboard() {
+function Profile() {
   return (
     <View>
       <Text>Dashboard</Text>
@@ -13,11 +13,11 @@ function Dashboard() {
   );
 }
 
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Dashboard',
+Profile.navigationOptions = {
+  tabBarLabel: 'Meu Perfil',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="reorder" size={40} color={tintColor} />
+    <Icon name="person" size={30} color={tintColor} />
   ),
 };
 
-export default withNavigationFocus(Dashboard);
+export default withNavigationFocus(Profile);
