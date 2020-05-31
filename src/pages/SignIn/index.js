@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { StatusBar } from 'react-native';
+import { useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import google from '~/assets/google2.png';
 import Background from '~/components/Background';
+import { signInRequest } from '~/store/modules/auth/actions';
 
 import {
   Container,
@@ -24,7 +26,12 @@ function SignIn({ navigation }) {
   const [password, setPassword] = useState();
 
   const passwordRef = useRef();
-  function handleSubmit() { }
+
+  const dispatch = useDispatch();
+
+  function handleSubmit() {
+    dispatch(signInRequest(cpf, password));
+  }
   return (
     <Background>
       <Container>

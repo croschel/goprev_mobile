@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
+import { useSelector } from 'react-redux';
 import createRoutes from '~/routes';
 
 export default function App() {
-  const signed = true;
+  const signed = useSelector((state) => state.auth.signed);
   const Routes = createRoutes(signed);
   return (
     <>

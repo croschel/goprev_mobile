@@ -31,8 +31,12 @@ export default (signed = false) =>
               style: {
                 backgroundColor: '#7b2be8',
                 height: 70,
+                width: 345,
+                marginHorizontal: 7,
+                marginBottom: 5,
                 padding: 5,
                 borderTopWidth: 0,
+                borderRadius: 40,
               },
             },
           }

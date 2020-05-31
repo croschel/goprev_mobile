@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Background from '~/components/Background';
 import goprev from '~/assets/goprev.png';
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 import {
   Container,
@@ -28,7 +30,12 @@ function SignUp({ navigation }) {
   const cpfRef = useRef();
   const passwordRef = useRef();
 
-  function handleSubmit() { }
+  const dispatch = useDispatch();
+
+  function handleSubmit() {
+    dispatch(signUpRequest(name, email, telefone, cpf, password));
+    navigation.navigate('Principal');
+  }
   return (
     <Background>
       <Container>
