@@ -37,10 +37,13 @@ export const FormBox = styled.View`
 export const GroupInput = styled.View``;
 
 export const Label = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
 `;
 
-export const FormInput = styled.TextInput``;
+export const FormInput = styled.TextInput`
+  margin: 0;
+  padding: 5px;
+`;
 
 export const GroupButton = styled.View`
   flex-direction: row;

@@ -24,13 +24,14 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
   try {
-    const { name, email, cpf, telefone, password } = payload;
+    const { name, email, cpf, telefone, codeaffiliate, password } = payload;
 
     yield call(api.post, 'user', {
       name,
       email,
       cpf,
       telefone,
+      codeaffiliate,
       password,
     });
     Alert.alert('Cadastro concluído com Sucesso');

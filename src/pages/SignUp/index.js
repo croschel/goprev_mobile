@@ -24,17 +24,21 @@ function SignUp({ navigation }) {
   const [email, setEmail] = useState();
   const [telefone, setTelefone] = useState();
   const [cpf, setCpf] = useState();
+  const [codeaffiliate, setCodeaffiliate] = useState();
   const [password, setPassword] = useState();
 
   const emailRef = useRef();
   const telefoneRef = useRef();
   const cpfRef = useRef();
+  const affiliateRef = useRef();
   const passwordRef = useRef();
 
   const dispatch = useDispatch();
 
   function handleSubmit() {
-    dispatch(signUpRequest(name, email, telefone, cpf, password));
+    dispatch(
+      signUpRequest(name, email, telefone, cpf, codeaffiliate, password)
+    );
     navigation.navigate('Principal');
   }
   return (
@@ -66,6 +70,7 @@ function SignUp({ navigation }) {
           <GroupInput>
             <Label>Email</Label>
             <FormInput
+              ref={emailRef}
               placeholder="Ex xxx@gmail.com"
               keyboardType="default"
               autoCorrect={false}
@@ -79,6 +84,7 @@ function SignUp({ navigation }) {
           <GroupInput>
             <Label>Telefone</Label>
             <FormInput
+              ref={telefoneRef}
               placeholder="Ex. (xx) 9xxxx-xxxx"
               keyboardType="number-pad"
               autoCorrect={false}
@@ -92,6 +98,7 @@ function SignUp({ navigation }) {
           <GroupInput>
             <Label>CPF</Label>
             <FormInput
+              ref={cpfRef}
               placeholder="Ex. xxx.xxx.xxx-xx"
               keyboardType="number-pad"
               autoCorrect={false}
@@ -99,12 +106,27 @@ function SignUp({ navigation }) {
               returnKeyType="next"
               value={cpf}
               onChangeText={setCpf}
+              onSubmitEditing={() => affiliateRef.current.focus()}
+            />
+          </GroupInput>
+          <GroupInput>
+            <Label>Código Indicação</Label>
+            <FormInput
+              ref={affiliateRef}
+              placeholder="Digite o código ID"
+              keyboardType="default"
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="next"
+              value={codeaffiliate}
+              onChangeText={setCodeaffiliate}
               onSubmitEditing={() => passwordRef.current.focus()}
             />
           </GroupInput>
           <GroupInput>
             <Label>Senha</Label>
             <FormInput
+              ref={passwordRef}
               placeholder="Digite sua senha"
               secureTextEntry
               autoCorrect={false}

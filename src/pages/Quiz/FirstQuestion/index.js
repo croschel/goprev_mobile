@@ -5,9 +5,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Container, Title, Answer, SubmitButton, InsideInfo } from './styles';
 
 function FirstQuestion({ navigation }) {
-  const [answer, setAnswer] = useState('');
+  const [profession, setProfession] = useState('');
 
-  function handleSubmit() { }
   return (
     <Container>
       <Title>1. Nos conte, qual sua profissão</Title>
@@ -17,11 +16,11 @@ function FirstQuestion({ navigation }) {
         autoCorrect={false}
         autoCapitalize="none"
         returnKeyType="send"
-        value={answer}
-        onChangeText={setAnswer}
-        onSubmitEditing={handleSubmit}
+        value={profession}
+        onChangeText={setProfession}
       />
-      <SubmitButton onPress={() => navigation.navigate('SecondQuestion')}>
+      <SubmitButton
+        onPress={() => navigation.navigate('SecondQuestion', { profession })}>
         <InsideInfo>Próxima</InsideInfo>
         <Icon name="arrow-forward" size={30} color="#fff" />
       </SubmitButton>

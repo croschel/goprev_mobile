@@ -22,7 +22,7 @@ export default (signed = false, firstlogin = false) =>
           SignIn,
           SignUp,
         }),
-        App: firstlogin
+        App: !firstlogin
           ? createStackNavigator(
             {
               Quiz,

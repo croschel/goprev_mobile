@@ -69,9 +69,6 @@ function SignIn({ navigation }) {
             />
           </GroupInput>
           <GroupOptions>
-            <SignGoogle>
-              <Google source={google} />
-            </SignGoogle>
             <SubmitButton onPress={handleSubmit}>
               <Icon name="arrow-forward" size={40} color="#FFF" />
             </SubmitButton>

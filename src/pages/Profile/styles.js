@@ -29,9 +29,19 @@ export const SignOutButton = styled(RectButton)`
   width: 340px;
   align-items: center;
   border-radius: 26px;
+  margin-top: 90px;
 `;
 export const InsideText = styled.Text`
   color: #fff;
   font-weight: bold;
   font-size: 20px;
+`;
+
+export const TextInfo = styled.Text`
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  background: #7b2be8;
+  border-radius: 16px;
+  color: #ffff;
 `;

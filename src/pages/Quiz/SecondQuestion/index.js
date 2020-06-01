@@ -13,9 +13,12 @@ import {
 } from './styles';
 
 function FirstQuestion({ navigation }) {
-  const [answer, setAnswer] = useState('');
+  const profession = navigation.getParam('profession');
+  console.tron.log(profession);
+
+  const [target, setTarget] = useState('');
   const [isSelected, setIsSelected] = useState(false);
-  console.tron.log(answer);
+
   return (
     <Container>
       <Title>
@@ -26,26 +29,29 @@ function FirstQuestion({ navigation }) {
         <GroupCheck>
           <CheckBox
             value={isSelected}
-            onValueChange={() => setAnswer('conservador')}
+            onValueChange={() => setTarget('conservador')}
           />
           <TextOption>Conservador</TextOption>
         </GroupCheck>
         <GroupCheck>
           <CheckBox
             value={isSelected}
-            onValueChange={() => setAnswer('moderado')}
+            onValueChange={() => setTarget('moderado')}
           />
           <TextOption>Moderado</TextOption>
         </GroupCheck>
         <GroupCheck>
           <CheckBox
             value={isSelected}
-            onValueChange={() => setAnswer('agressivo')}
+            onValueChange={() => setTarget('agressivo')}
           />
           <TextOption>Agressivo</TextOption>
         </GroupCheck>
       </AnswerBox>
-      <SubmitButton onPress={() => navigation.navigate('ThirdQuestion')}>
+      <SubmitButton
+        onPress={() =>
+          navigation.navigate('ThirdQuestion', { target, profession })
+        }>
         <InsideInfo>Próxima</InsideInfo>
         <Icon name="arrow-forward" size={30} color="#fff" />
       </SubmitButton>

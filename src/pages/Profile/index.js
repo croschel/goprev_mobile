@@ -7,6 +7,7 @@ import { signOut } from '~/store/modules/auth/actions';
 import {
   Container,
   Avatar,
+  TextInfo,
   InfoBox,
   Info,
   SignOutButton,
@@ -16,7 +17,6 @@ import {
 function Profile() {
   const dispatch = useDispatch();
   const client = useSelector((state) => state.client.profile);
-  console.tron.log(client);
 
   function handleSignOut() {
     dispatch(signOut());
@@ -32,7 +32,9 @@ function Profile() {
         <Info>{client.name}</Info>
         <Info>{client.cpf}</Info>
         <Info>{client.email}</Info>
-        <Info>{client.telefone}</Info>
+        <Info>{client.phone}</Info>
+        <TextInfo>Link para chamar a galera e ganhar 100 pts</TextInfo>
+        <TextInfo>goprev.com/{client.userCode}</TextInfo>
       </InfoBox>
       <SignOutButton onPress={handleSignOut}>
         <InsideText>Sair do Aplicativo</InsideText>
